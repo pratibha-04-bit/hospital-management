@@ -1,0 +1,91 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}registration{% endblock%}
+
+{% block body %}
+ <!-- navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light " style="background-color:  rgb(53, 8, 78); ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#" style="color:cornsilk;">WE CARE</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+     
+    </div>
+  </nav>
+   
+  <!-- card for form -->
+  <div class="container mt-3">
+    <div class="row justify-content-md-center">
+      
+      <div class="col-md-auto">
+        <div class="card text-center">
+          <div class="card-header" style="background-color: rgb(61, 25, 90); color:white">
+            <h5>REGISTRATION FORM</h5>
+          </div>
+          <div class="card-body" >
+            <form action="register" method="post">
+              {% csrf_token %}
+      
+              <input type="text" name="first_name" placeholder="First name"><br><br>
+              <input type="text" name="last_name" placeholder="last name"><br><br>
+              <input type="text" name="username" placeholder="username"><br><br>
+              <input type="email" name="email" placeholder="email"><br><br>
+              <input type="password" name="password1" placeholder="Password"><br><br>
+              <input type="password" name="password2" placeholder="Confirm passwprd"><br><br>
+              <input type="submit" >
+          
+          </form>
+            </form>
+            <div>
+                {% for message in messages %}
+                <h3>{{message}}</h3>
+                {% endfor %}
+        
+                     
+            </div>
+        
+          </div>
+         
+        </div>
+      
+      </div>
+     
+    </div>
+    
+  </div>
+  
+
+
+
+
+<br>
+
+ <footer  style="background-color: rgb(36, 5, 53);color:bisque"> 
+
+  <!-- Copyright  -->
+  <div class="footer-copyright text-center py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          One of three columns
+      
+          
+          
+          
+        </div>
+        <div class="col-sm">
+          One of three columns
+        </div>
+        <div class="col-sm">
+          One of three columns
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright -->
+  
+</footer> 
+{% endblock %}

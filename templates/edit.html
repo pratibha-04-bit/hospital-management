@@ -1,0 +1,55 @@
+
+ <form method="POST" id="modal_form">
+    {% csrf_token %}
+    
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <input type="hidden" id="id" name="id" value="{{doctor.id}}"/>
+          <label for="validationDefault01">Doctor Id</label>
+          <input type="text" class="form-control" id="doc_no" name="doc_no" value="{{doctor.doc_no}}">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationDefault02">Doctor Name</label>
+          <input type="text" class="form-control" id="doc_name" name="doc_name" value="{{doctor.doc_name}}">
+        </div>
+       
+      </div>
+      <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault03">Phone no.</label>
+            <input type="text" class="form-control" id="doc_phone" name="doc_phone" value="{{doctor.doc_phone}}">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault04">Email Id</label>
+            <input type="text" class="form-control" id="doc_email" name="doc_email" value="{{doctor.doc_email}}">
+          </div>
+         
+        </div>
+      <div class="form-row">
+      
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault05">Department</label>
+            <input type="text" class="form-control" id="dept" name="dept" value="{{doctor.dept}}">
+          </div>
+          
+        
+        <div class="col-md-6 mb-3">
+          <label for="validationDefault06">Date of joining</label>
+          <input type="text" class="form-control" id="doj" name="doj" values="{{doctor.doj}}">
+        </div>
+        
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationDefault07">Gender</label>
+          <input class="form-control" type="text" name="gender" id="gender" value="{{doctor.gender}}">
+        </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="save2">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+      </div>
+   
+     
+    </form>

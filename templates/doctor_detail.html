@@ -1,0 +1,310 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}doctor information{% endblock%}
+
+{% block body %}
+ <!-- navbar -->
+ <nav class="navbar navbar-expand-md navbar-light">
+    <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- sidebar -->
+          <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+            <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"><b>WE <span style="color:rgb(150, 10, 75)">CARE</span></b></a>
+            <div class="bottom-border pb-3">
+              <!-- <img src="images/admin.jpeg" width="50" class="rounded-circle mr-3"> -->
+              <a href="#" class="text-white">Hello, {{user.username}}</a>
+            </div>
+            <ul class="navbar-nav flex-column mt-4">
+              <li class="nav-item"><a href="show_dept" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Department</a></li>
+              <li class="nav-item"><a href="doctor" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-user text-light fa-lg mr-3"></i>Doctor</a></li>
+              <li class="nav-item"><a href="leave_form" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-envelope text-light fa-lg mr-3"></i>Availability</a></li>
+              <li class="nav-item"><a href="patient" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wheelchair text-light fa-lg mr-3"></i>Patient</a></li>
+
+              
+            </ul>
+          </div>
+          <!-- end of sidebar -->
+
+          <!-- top-nav -->
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-light fixed-top py-2 top-navbar" >
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                <h4 class="text-light text-uppercase mb-0" >ADMIN PANEL</h4>
+              </div>
+              <div class="col-md-5">
+                <!-- <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Search...">
+                    <button type="button" class="btn btn-white search-button"><i class="fas fa-search text-danger"></i></button>
+                  </div>
+                </form> -->
+              </div>
+              <div class="col-md-3">
+                <ul class="navbar-nav">
+                  <!-- <li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-comments text-muted fa-lg"></i></a></li>
+                  <li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-bell text-muted fa-lg"></i></a></li> -->
+                  {% if user.is_authenticated %}
+										
+                    <li><a href="logout"><i class="fas fa-sign-out-alt text-danger fa-lg"></i>logout</a></li>
+                    
+                  {% endif %}                 
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end of top-nav -->
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+  <!-- end of navbar -->
+
+  <!-- modal -->
+  <!-- <div class="modal fade" id="sign-out">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Want to leave?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          Press logout to leave
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- end of modal -->
+
+  <!-- form for dept -->
+  <div class="col-xl-10 col-lg-9 col-md-8 ml-auto" >
+    <div class="row align-items-center">
+        <div class="col-xl-12 col-12">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <form class="form-inline my-2 my-lg-0" method="post" action="./search">
+                            {% csrf_token %} 
+                           <input type="search" class="form-control mr-sm-4" name="srh" id="search" placeholder="Search" aria-label="Search">
+                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search  mr-3"></i>Search</button>
+                             
+                           </form>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="btn " href="doctor" role="button" style="float:right;color:rgb(67, 6, 95); outline: 2px solid rgb(68, 7, 83);"><i class="fas fa-arrow-left"></i>+ Add Doctor</a>
+                            
+                        </div>
+                    </div>
+                   
+                  
+                  
+                </div>
+                
+            </div>   
+            
+            <div>
+      
+              {% if messages %}
+              <a class="btn" href="doctor_detail">click here to go back</a>
+                 <ul class="messages">
+                   {% for k in messages %}
+                   <li style="color: crimson;">{{k}}</li>
+                   {% endfor %}
+                  </ul>
+              {% endif %}
+            </div>
+            <br>
+            <div>
+              {% if sr %}
+              <a class="btn" href="doctor_detail">click here to go back</a>
+                {% for k in sr %}
+                <table class="table  table-hover text-center">
+                  
+                  <thead class="text-muted">
+                  <tr>
+                  <th>Doctor ID</th>
+               
+                  <th>Doctor Name</th>
+                  
+                  <th>Department</th>
+                  
+                  <th>Phone No.</th>
+                  
+                  <th>Email Id</th>
+        
+                  <th>Date of joining</th>
+                  
+                  </tr>
+                 </thead >
+                 <tbody style="color:green">
+                    <tr>
+                        <td>{{k.doc_no}}</td>
+                        <td>{{k.doc_name}}</td>
+                        <td>{{k.dept}}</td>
+                        <td>{{k.doc_phone}}</td>
+                        <td>{{k.doc_email}}</td>
+                        <td>{{k.doj}}</td>
+                    </tr> 
+        
+                 </tbody>
+                </table>
+                {% endfor %}
+                 
+              {% endif %}
+        
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table  table-hover text-center" >
+                          <thead class="head">
+                            <tr class="text-muted">
+                              <th>Doctor ID</th>
+                              <th>Doctor Name</th>
+                              <th>Department</th>
+                              <th>Phone No.</th>
+                              <th>Email Id</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for doctor in doctors %}
+                            <tr>
+                              <td>{{doctor.doc_no}}</td>
+                              <td>{{doctor.doc_name}}</td>
+                              <td>{{doctor.dname}}</td>
+                              <td>{{doctor.doc_phone}}</td>
+                              <td>{{doctor.doc_email}}</td>
+                              
+                              <td>
+                                <button type="button" class="btn btn-primary show" id="{{doctor.id}}" onclick="showFun(this)" name="{{doctor.id}}"  data-toggle="modal" data-target="#exampleModalLong"><i class="fas fa-eye"></i>View</button>
+                                
+                                <button type="button" class="btn btn-danger" name="{{doctor.id}}" id="delete"><i class="fas fa-trash"></i>Delete</button>
+                            </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- pagination -->
+                        <nav>
+                          <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                              <a href="#" class="page-link py-2 px-3">
+                                <span>Previous</span>
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <a href="#" class="page-link py-2 px-3">
+                                1
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <a href="#" class="page-link py-2 px-3">
+                                2
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <a href="#" class="page-link py-2 px-3">
+                                3
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <a href="#" class="page-link py-2 px-3">
+                                <span>Next</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+            <!-- end of pagination -->
+                </div>
+              </div>
+            
+          </div>
+       
+    </div>
+
+
+   
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><b>Doctor Information</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          {% include 'edit.html' %}
+            <!-- <form method="POST">
+              {% csrf_token %}
+              
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <input type="hidden" id="id" value="{{doctor.id}}"/>
+                    <label for="validationDefault01">Doctor Id</label>
+                    <input type="text" class="form-control" id="doc_no" name="doc_no" value="{{doctor.doc_no}}">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="validationDefault02">Doctor Name</label>
+                    <input type="text" class="form-control" id="doc_name" name="doc_name" value="{{doctor.doc_name}}">
+                  </div>
+                 
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault03">Phone no.</label>
+                      <input type="text" class="form-control" id="doc_phone" name="doc_phone" value="{{doctor.doc_phone}}">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault04">Email Id</label>
+                      <input type="text" class="form-control" id="doc_email" name="doc_email" value="{{doctor.doc_email}}">
+                    </div>
+                   
+                  </div>
+                <div class="form-row">
+                
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault05">Department</label>
+                      <input type="text" class="form-control" id="dept" name="dept" value="{{doctor.dept}}">
+                    </div>
+                    
+                  
+                  <div class="col-md-6 mb-3">
+                    <label for="validationDefault06">Date of joining</label>
+                    <input type="text" class="form-control" id="doj" name="doj" values="{{doctor.doj}}">
+                  </div>
+                  
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 mb-3">
+                    <label for="validationDefault07">Gender</label>
+                    <input class="form-control" type="text" name="gender" id="gender" value="{{doctor.gender}}">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="save2">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+             
+               
+              </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+{% endblock %}

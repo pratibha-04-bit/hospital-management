@@ -1,0 +1,152 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}appointment{% endblock%}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #530a70;">
+    <a class="navbar-brand" href="home1"><b>WE</b> <span style="color:rgb(197, 14, 121)"><b>CARE</b></span></a>
+    
+  </nav>
+<div class="move">
+    <marquee behavior="scroll" direction="left">Our hospital provide you full body check up of Rs 3000/- only for more information
+        please contact +91-838632832.
+    </marquee>
+
+
+</div>
+<section class="appoint">
+ 
+<div class="container">
+    <div class="contactinfo">
+        <div>
+            <h2>Contact us</h2>
+            <ul class="info">
+                <li>
+                    <span>
+                        <img src="{% static 'images/location.png' %}" alt="">
+                    </span>
+                    <span>234 abcd Marg<br>
+                            qwer city,LM<br>
+                            84953</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="{% static 'images/envelope1.png' %}" alt="">
+                    </span>
+                    <span>wecare@gmail.com</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="{% static 'images/call1.png' %}" alt="">  
+                    </span>
+                    <span>+91-76543456</span>
+                </li>
+            </ul>
+        </div>
+            <ul class="social">
+                <li><a href=""></a><i class="network fab fa-facebook"></i>
+                   
+                    
+                 <li><a href=""></a><i class="network fab fa-twitter"></i></li>
+                 <li><a href=""></a><i class="network fab fa-linkedin"></i></i></li></li>
+                 <li><a href=""></a><i class="network fab fa-instagram" ></i></li>
+                 
+            </ul>
+
+       
+    </div>
+    <div class="contactform">
+        <h2><b>Make an Appointment</b></h2>
+        
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+        {{message}}
+        
+    </div>
+        {% endfor %}
+        <div class="formbox">
+            <form>
+                <div class="form-row">
+                <div class="form-group col-md-6">   
+                <div class="inputbox w50">
+                    <label>Patient Name</label>
+                    <input type="text" class="form-control"  id="patient_name" name="patient_name" required>
+                    
+                </div>
+                </div>
+                <div class="form-group col-md-6">
+                <div class="inputbox w50">
+                    <label>Patient Name</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                    
+                </div>
+            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Department</label>
+                <div class="inputbox w50">
+                    <select id="department"  class="form-control" name="department" class=" department"  required>
+                        <option selected>Choose...</option>
+                        {% for department in departments%}
+                        <option value={{department.id}}>{{department.dname}}</option>
+                        {% endfor %}
+                      </select>
+                    
+                </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Doctor</label>
+                <div class="inputbox w100">
+                    <select id="doctor"  class="form-control" name="doctor"  required>
+                        <option selected>Choose...</option>
+                       
+                      </select>
+                    
+                </div>
+            </div>  
+            <div class="form-row">
+                <div class="col-md-6 mb-3 ">
+                    <label >Date of Appointment</label>
+                  <input type="Date" class="form-control" id="appointment_date" name="appointment_date" required>
+                  
+                  
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <label >Gender</label>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="gender" value="male" checked required>
+                      <label class="form-check-label" for="exampleRadios1">
+                          Male
+                      </label>
+                      &nbsp
+                      <input class="form-check-input" type="radio" name="gender" id="gender" value="female" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                       Female
+                      </label>
+                    </div><br>
+                    
+                </div>
+                
+            
+                         
+               
+                
+              </div>
+                <div class="inputbox">
+                <button id="save_appoint" class="btn btn-outline">Submit</button>
+
+                </div>
+
+               
+              </form>
+        </div>
+
+    </div>
+</div>
+</section>
+
+{% endblock %}

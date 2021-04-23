@@ -1,0 +1,493 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link href="{% static 'style/style3.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <title>hospital Page</title>
+   <style>
+    
+       #jumbotron{
+           background-image: linear-gradient(rgba(44, 14, 75, 0.486),
+           rgba(48, 21, 73, 0.699)),url('{% static "images/c2.png" %}') ;
+           background-size: cover;
+           height: 500px;
+        
+           
+       }
+       .d-inline-flex {
+         background-color: rgb(131, 103, 156);
+       }
+      
+       
+   </style>
+    
+  
+  </head>
+  <body >
+   <div class="loader_bg">
+    <div class="loader"></div>
+    <!-- <span></span>
+    <span></span>
+    <span></span>
+    <span></span> -->
+
+
+
+     
+
+   </div>
+
+     
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="hospital_manage/home1"><b>WE</b> <span><b>CARE</b></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#department">Department</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#we-offer">Services</a>
+            </li>
+            <li class="nav-item">
+              <!-- <button type="button" class="btn btn-outline-primary">LOG IN</button> -->
+              <a href="login" class="btn btn-outline-primary">LOG IN</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+     
+      
+    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+        <div class="container">
+          <h1 class="wow bounceInLeft" data-wow-duration="2s"id="head" data-wow-delay="2s"><strong>WE CARE</strong> </h1>
+          <p class="wow bounceInLeft" data-wow-duration="3s"id="head" data-wow-delay="2s">Welcome to our Hospital. We have Best Doctors and Staff 
+          to give you best Service.<br> Stay Healthy Stay Happy.
+        <span ><strong><b>WE CARE</b></strong></span> for You</p><br>
+        <a href="appointment" class="wow bounceInLeft" data-wow-duration="4s"id="head" data-wow-delay="2s">Make An Appointment
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          
+        </a>
+
+        </div>
+        <div class="container" style="margin-top: 180px;">
+            <div class="row justify-content-md-center">
+    
+              <div class="col-md-auto">
+                <center>
+                  <div class="card-deck" >
+                    <div class="card-1 wow bounceInRight" data-wow-duration="2s" data-wow-delay="2s" >
+                      <div class="card" style="max-width:18rem;">
+                      
+                        <div class="card-body">
+                          <img src='{% static "images/l6.png" %}' class="img-fluid rounded-circle  mb-3" alt="...">
+                          <h5 class="card-title">24/7 service</h5>
+                          <p class="card-text">
+                           We give you 24/7 service.</p>
+                          <p><i class="fas fa-phone" ></i>+91-84936493 Helpline Number<br></p>
+                        <p><i class="fas fa-phone" ></i>+91-84936765 For Emergency </p>
+                          
+                          
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="card-2 wow bounceInRight" data-wow-duration="2s" data-wow-delay="2.5s">
+                      <div class="card" style="max-width: 18rem;">
+                        
+                        <div class="card-body">
+                          <img src='{% static "images/l2.jpg" %}'  class="img-fluid rounded-circle mb-3 " alt="...">
+                          <h5 class="card-title">Ambulance Service</h5>
+                          <p class="card-text">Our Ambulance have all the facility for patient .We give best service </p>
+                          <p><i class="fas fa-phone" ></i>+91-84936456 Booking Number<br></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-3 wow bounceInRight" data-wow-duration="2s" data-wow-delay="3s">
+                      <div class="card" style="max-width: 18rem;">
+                       
+                        <div class="card-body">
+                          <img src='{% static "images/l3.png" %}'  class="img-fluid rounded-circle  "  alt="...">
+                          <h5 class="card-title">Online Consult</h5>
+                          <p class="card-text">Consult with our best doctors </p>
+                          <p><i class="fas fa-phone" ></i>+91-84936494 consult Number<br></p>
+                          <p><i class="fas fa-envelope" ></i>wecare@gamil.com<br></p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </center>
+              </div>
+              
+            </div>
+            
+          </div>
+    </div>
+    
+
+      <section  >
+        <div class="container" id="about">
+          <h2 class=" wow bounce" data-wow-duration="2s" data-wow-delay="0.5s" style="margin-top: 100px;">About Us</h2>
+          <div class="shape">
+            <div class="shape-1"></div>
+          </div>
+          <div class="row" id="about-us">
+            <div class="col-sm-7">
+             <h4>Our Hospital</h4>
+             <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+              It has survived not only five centuries,
+             </p>
+            </div>
+            <div class="col-sm-5">
+              <div class="about-img">
+                <img src='{% static "images/h1.jpg" %}' alt="image" id="img">
+              </div>
+              
+            </div>
+          </div>
+  
+        </div>
+      </section>
+      
+      <section id="department" style="margin-top: 30px;margin-bottom:40px;">
+      
+        
+          <b><h2 class=" wow bounce" data-wow-duration="2s" data-wow-delay="0.5s">Department</h2></b>
+         
+          <div class="shape">
+            <div class="shape-1"></div>
+          </div>
+        
+        
+           
+         <br>
+         <div class="container" >
+          <p><i>All the department have best faculty . We provide you best service and good health.<br>
+          For more details please contact us</i></p>
+              <div class="row" id="dept">
+
+                <div class="col-4">
+    
+                  <!-- <div class="animate__animated animate__backInLeft animate__delay-2s "> -->
+                    <div class="warning wow fadeInLeft" data-wow-delay="1s">
+                       
+                      <img src='{% static "images/cardio.jpg" %}' alt="doctor image"> &nbsp; <strong>Cardiology</strong> 
+                    </div>
+                <!-- </div> -->
+                    <br>
+                    <div class="warning wow fadeInRight" data-wow-delay="1s" style="margin-top: 40px;">
+                      <img src='{% static "images/neuro.png" %}' alt="doctor image"> &nbsp; <strong>Neurology</strong> 
+                     
+                    </div>
+                 
+                  
+              </div>
+                <div class="col-4">
+                  
+                   
+                  <div class="success wow fadeInLeft" data-wow-delay="1s">
+                   <img src='{% static "images/ortho.png" %}' alt="doctor image"> &nbsp; <strong>Orthopedic</strong> 
+                  
+                 </div>
+                 <br>
+                 <div class="success wow fadeInRight" data-wow-delay="1s" style="margin-top: 40px;">
+                   <img src='{% static "images/gastro.png" %}' alt="doctor image"> &nbsp; <strong>Gastroenterology</strong> 
+                  
+                 </div>
+                </div>
+                <div class="col-4">
+               
+              
+              <div class="danger wow fadeInLeft" data-wow-delay="1s">
+               <img src='{% static "images/oncology.png" %}' alt="doctor image"> &nbsp; <strong>Oncology</strong> 
+              
+             </div>
+             <br>
+             <div class="danger wow fadeInRight" data-wow-delay="1s" style="margin-top: 40px;" >
+               <img src='{% static "images/dental.png" %}' alt="doctor image"> &nbsp; <strong>Dental</strong>
+              
+             </div>
+            </div>
+
+          </div>
+        <!-- </div> -->
+      </section>
+   
+     
+  <section id="doctor">
+    <div class="testimonial">
+      <div class="testimonial-head">
+        <h2 class=" wow bounce" data-wow-duration="2s" data-wow-delay="0.5s">Doctors</h2>
+        <div class="shape">
+          <div class="shape-1"></div>
+        </div>
+      </div><br>
+      <div class="testimonial-container">
+        <div class="testimonial-box">
+          <div class="testimonial-image">
+            <img src='{% static "images/doc6.png" %}' alt="doctor image">
+          </div>
+          <div class="testimonial-item">
+            <h3>Dr.Harry</h3>
+            <i class="fas fa-star icon" ></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star-half icon"></i>
+            <h4>Cardiology</h4>
+            <p>
+              Dr.Harry is the best cardiologist.<br>He has 10 years of experience.<br>
+              He did more than 40 surgeries all are successfull.
+            </p>
+            <div class="shape"></div>
+
+          </div>
+        </div>
+        <div class="testimonial-box">
+          <div class="testimonial-image">
+            <img src='{% static "images/doc5.png" %}' alt="doctor image">
+          </div>
+          <div class="testimonial-item">
+            <h3>Dr.Rose</h3>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star-half icon"></i>
+            <h4>Neurologist</h4>
+            <p>
+              Dr. Rose is the best Nerurologist.<br>He has 9 years of experience.<br>
+             She operated more than 40 surgeries. She is best doctor in her department.
+            </p>
+            <div class="shape"></div>
+
+          </div>
+        </div>
+
+        <div class="testimonial-box">
+          <div class="testimonial-image">
+            <img src='{% static "images/doc7.png" %}' alt="doctor image">
+          </div>
+          <div class="testimonial-item">
+            <h3>Dr.James</h3>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star icon"></i>
+            <i class="fas fa-star-half icon"></i>
+            <h4>Orthopedic</h4>
+            <p>
+              Dr.James is the best Orthopedic doctor.<br>He has 10 years of experience.<br>
+              He isbest surgen.He handled more than 1000 severe cases and all are successfull.
+            </p>
+            <div class="shape"></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div> 
+  </section>
+
+  
+  
+  <section id="we-offer" style="margin-top: 30px;">
+    <h2 class=" wow bounce" data-wow-duration="2s" data-wow-delay="0.5s">We Offer</h2>
+    <div class="shape">
+      <div class="shape-1"></div>
+    </div>
+     <div class="offer">
+     
+    <div class="container">
+      <div class="box wow tada">
+        <div class="content">
+          <h2>Offer</h2>
+          <h3>Service One</h3>
+          <p>Lorem ipsum, or lipsum as it is sometimes known, 
+            is dummy text used in laying 
+            out print, graphic or web designs. 
+           </p>
+           <a href="#">read more</a>
+
+        </div>
+      </div>
+      <div class="box wow tada">
+        <div class="content">
+          <h2>02</h2>
+          <h3>Service Two</h3>
+          <p>Lorem ipsum, or lipsum as it is sometimes known, 
+            is dummy text used in laying 
+            out print, graphic or web designs. 
+           </p>
+           <a href="#">read more</a>
+
+        </div>
+      </div>
+      <div class="box wow tada">
+        <div class="content">
+          <h2>03</h2>
+          <h3>Service Three</h3>
+          <p>Lorem ipsum, or lipsum as it is sometimes known, 
+            is dummy text used in laying 
+            out print, graphic or web designs. 
+           </p>
+           <a href="#">read more</a>
+
+        </div>
+      </div>
+     
+    </div>
+    </div>
+   </section>
+    
+  <section>
+    <h2 class="heading wow bounce" data-wow-duration="2s" data-wow-delay="0.5s">What <span>people</span> say</h2>
+    <div class="shape">
+      <div class="shape-1"></div>
+    </div><br>
+    <div class="slider-area">
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+             <div class="image-area">
+               <img src='{% static "images/w5.png" %}' alt="" class="center">
+             </div>
+             <div class="carousel-caption">
+               <h3>Jerry jones</h3>
+               <i class="fas fa-quote-left"></i>
+               <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
+                 type and scrambled it to make a type specimen book. </p>
+
+             </div>
+            </div>
+            <div class="carousel-item">
+              <div class="image-area">
+                <img src='{% static "images/w2.jpg" %}' alt="" class="center">
+              </div>
+              <div class="carousel-caption">
+                <h3>Jeans jones</h3>
+                <i class="fas fa-quote-left"></i>
+                <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
+                  type and scrambled it to make a type specimen book. </p>
+ 
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="image-area">
+                <img src='{% static "images/m1.jpg" %}' alt="" class="center">
+              </div>
+              <div class="carousel-caption">
+                <h3>kenny james</h3>
+                <i class="fas fa-quote-left"></i>
+                <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
+                  type and scrambled it to make a type specimen book. </p>
+                 
+ 
+              </div>
+            </div>
+          </div>
+          <br>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+      
+  </section>
+
+
+
+ 
+  <div class="footer">
+    <div class="section5">
+	
+	    <div class="row">
+		    
+		    <div class="col-lg-4 col-md-4">
+			<h4>Contact us</h4>
+			<p><i class="fas fa-home"></i> street no. 555,abc road</p>
+			
+			<p><i class="fas fa-phone"></i> 22929292</p>
+			<p><i class="fas fa-globe"></i> www.abc.com</p>
+			</div>
+			<div class="col-lg-4 col-md-4">
+			<h4>About</h4>
+			<p><i class="far fa-square"></i> About us</p>
+			<p><i class="far fa-square"></i> Privacy</p>
+			<p><i class="far fa-square"></i> Terms & condition</p>
+			</div>
+			<div class="col-lg-4 col-md-4">
+			<h4>Stay connect</h4>
+			<i class="network fab fa-facebook"></i>
+			<i class="network fab fa-twitter"></i>
+			<i class="network fab fa-linkedin"></i>
+			<i class="network fab fa-youtube"></i>
+			<i class="network fab fa-github"></i>
+			<i class="network fab fa-skype"></i><br>
+			<input type="email" placeholder="@ subscribe us">
+			<button class="btn btn-success">subscribe</button>
+			</div>
+		</div>
+    </div>
+</div>  
+     
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+   
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+      //var preloader = document.getElementsByClassName('loader');
+      //function myLoad(){
+        //preloader.style.display='none';
+      //}
+      setTimeout(function(){
+        $('.loader_bg').fadeToggle();
+      },2000)
+    </script>
+    <script>
+      new WOW().init();
+    </script>
+</body>
+</html>
